@@ -36,27 +36,35 @@ public class QBStats {
 		
 		// These four variables and formulas represent the breakdown of the QB rating 
 		
-		double a = (((comp/ATT) - .3) * 5);
-		double b = (((Yards/ATT) - 3) * .25);
-		double c = ((TD/ATT) * 20);
-		double d = (2.375 - ((Interceptions/ATT) * 25));
+		double calca = (((comp/ATT) - .3) * 5);
+		double calcb = (((Yards/ATT) - 3) * .25);
+		double calcc = ((TD/ATT) * 20);
+		double calcd = (2.375 - ((Interceptions/ATT) * 25));
 		
 		// This is checking to see whether a QB has any of the above calculations 
 		// to be higher than 2.375 or less than 0 and is setting it to 2.375 if any 
 		// of the above conditions are true
 		
-		if(a > 2.375 || a < 0.0)
-			a = 2.375;
-		else if (b > 2.375 || b < 0.0)
-			b = 2.375;
-		else if (c > 2.375 || c < 0.0)
-			c = 2.375;
-		else if (d > 2.375 || d < 0.0)
-			d = 2.375;
+		if(calca > 2.375)
+			calca = 2.375;
+		else if (calcb > 2.375)
+			calcb = 2.375;
+		else if (calcc > 2.375)
+			calcc = 2.375;
+		else if (calcd > 2.375)
+			calcd = 2.375;
+		else if (calca < 0)
+			calca = 0;
+		else if (calcb < 0)
+			calcb = 0;
+		else if (calcc < 0)
+			calcc = 0;
+		else if(calcd <0)
+			calcd = 0;
 		
 		// This is Calculating the QB Rating using the above individual formulas
 		
-		double QbRate = (((a + b + c + d)/6) * 100);
+		double QbRate = (((calca + calcb + calcc + calcd)/6) * 100);
 		
 		System.out.printf("The QB rating of" + " " + firstName + " " + lastName + " " + "is %.2f", QbRate);
 		
