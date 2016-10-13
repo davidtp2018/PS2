@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//Thomas Pennington
+//Thomas Pennington 
 public class QBStats {
 
 
