@@ -1,5 +1,6 @@
 import java.util.Scanner;
 //Thomas Pennington 
+//Quiz 1
 public class QBStats {
 
 
